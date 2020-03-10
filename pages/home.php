@@ -26,3 +26,25 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row my-5">
+        <div class="col-md-4">
+            <a href="#" class="d-block text-decoration-none border p-3 link-tile">
+                <div class="h1">
+                    <i class="la la-gears display-1"></i>
+                </div>
+                <h3 class="h6">AGRICULTURE, LIVESTOCK & FISHERIES</h3>
+                <p class="text-small">Agriculture,Livestock,Fisheries services offered by government</p></a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="#" class="d-block text-decoration-none border p-3 link-tile">
+                <div class="h1">
+                    <i class="la la-dollar display-1"></i>
+                </div>
+                <h3 class="h6">BANKING, TAX & INSURANCE</h3>
+                <p class="text-small">Banking,Tax,Insurance, Money</p></a>
+        </div>
+    </div>
+</div>

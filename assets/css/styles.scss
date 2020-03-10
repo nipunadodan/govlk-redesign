@@ -51,7 +51,16 @@ a{
       //color: #ffffff !important;
     }
   }
+
+  &.link-tile{
+    &:hover{
+      background: $main_colour;
+      color: #ffffff;
+      border-color: $main_colour;
+    }
+  }
 }
+
 
 /* header */
 #state_logo{
@@ -69,3 +78,5 @@ form{
     }
   }
 }
+
+
