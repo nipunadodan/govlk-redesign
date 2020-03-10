@@ -15,7 +15,8 @@
 
     <title><?php echo SITE_NAME; ?></title>
 
-    <link href="<?php echo ASSETS_URL?>webfonts/sfui/sfui.css" rel="stylesheet" />
+    <!--<link href="<?php /*echo ASSETS_URL*/?>webfonts/sfui/sfui.css" rel="stylesheet" />-->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
     <link href="<?php echo ASSETS_URL?>css/bootstrap.min.css" rel="stylesheet" />
     <link href="<?php echo ASSETS_URL?>css/intlTelInput.min.css" rel="stylesheet">
     <link href="<?php echo ASSETS_URL?>css/datetimepicker.min.css" rel="stylesheet">
@@ -36,11 +37,11 @@
 
 <body data-spy="scroll" data-target=".navbar" data-offset="56">
 <header>
-    <div class="bg-dark text-white py-3">
+    <div class="bg-black text-white py-3">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <span class="font-weight-bold text-big">GOV.LK</span>
+                    <img src="assets/images/srilanka.png" class="mr-3" height="35"><span class="text-bold h1" id="state_logo">GOV.LK</span>
                 </div>
             </div>
         </div>
