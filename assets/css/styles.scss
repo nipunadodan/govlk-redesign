@@ -1,8 +1,11 @@
-$main_colour: #65005E;
+$main_colour: #1d70b8;
 $body_colour: #333;
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Ubuntu", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'PT Sans', sans-serif;
+  //font-family: 'SFUIDisplay', sans-serif;
+  font-weight: 400;
+  //font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Ubuntu", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -21,9 +24,20 @@ h1,h2,h3,h4,h5,h6{
   font-size: 1.2rem;
 }
 
+.text-bold{
+  font-weight: 700;
+}
+
+.bg-black{
+  background: black;
+}
+
+.bg-blue{
+  background: $main_colour;
+}
+
 h1.page-title{
-  font-family: 'SFUIDisplay-Bold', sans-serif;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 a{
@@ -39,4 +53,19 @@ a{
   }
 }
 
-/* colours */
+/* header */
+#state_logo{
+  position: relative;
+  top: 12px;
+}
+
+form{
+  input{
+    width: 100%;
+    &.form-control:focus{
+      outline: 0;
+      border: 0;
+      box-shadow: none;
+    }
+  }
+}
