@@ -1,16 +1,11 @@
-$main_colour: #1d70b8;
+$main_colour: #65005E;
 $body_colour: #333;
 
-body {
-  font-family: 'PT Sans', sans-serif;
-  //font-family: 'SFUIDisplay', sans-serif;
-  font-weight: 400;
-  //font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Ubuntu", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+body{
+  font-family: 'Roboto Condensed', sans-serif;
+  color: $body_colour;
 }
 
-h1,h2,h3,h4,h5,h6{
-  font-weight: bold;
-}
 
 .text-normal{
   font-size: 1rem;
@@ -20,27 +15,20 @@ h1,h2,h3,h4,h5,h6{
   font-size: 0.8rem;
 }
 
-.text-big{
-  font-size: 1.2rem;
-}
-
 .text-bold{
   font-weight: 700;
 }
 
-.bg-black{
-  background: black;
+/* SF Fonts */
+.SF-thin{
+  font-weight: 200;
 }
 
-.bg-blue{
-  background: $main_colour;
-}
-
-h1.page-title{
+h1.home-title{
   font-weight: 700;
 }
 
-a{
+/*a{
   color: $body_colour;
   &:hover{
     color: $body_colour;
@@ -51,32 +39,55 @@ a{
       //color: #ffffff !important;
     }
   }
+}*/
 
-  &.link-tile{
-    &:hover{
-      background: $main_colour;
-      color: #ffffff;
-      border-color: $main_colour;
-    }
-  }
+.pre{
+  font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  font-size: 87.5%;
+  background: lighten($body_colour,75%);
+  padding: 5px 10px;
+  border-radius: 3px;
 }
 
+/* layout */
+.my-10{
+
+}
+
+.py-10{
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+
+.py-15{
+  padding-top: 8rem !important;
+  padding-bottom: 8rem !important;
+}
+
+.pt-15{
+  padding-top: 8rem !important;
+}
+
+.pb-15{
+  padding-bottom: 8rem !important;
+}
 
 /* header */
-#state_logo{
+.state_logo{
   position: relative;
-  top: 12px;
+  top: 3px;
 }
 
-form{
-  input{
-    width: 100%;
-    &.form-control:focus{
-      outline: 0;
-      border: 0;
-      box-shadow: none;
-    }
+#border{
+  background: linear-gradient(0deg, rgba(255,255,255,0.8),rgba(255,255,255,0.8)), url("../../assets/images/border.jpg");
+//linear-gradient(0deg, rgba(255,255,255,0.5),rgba(255,255,255,0.5))background-image: ;
+  height: 48px;
+  background-repeat: repeat-x;
+  //width: var(--breakpoint-md);
+
+}
+/*@media only screen and (max-width: var(--breakpoint-md)){
+  #border {
+    background-size: 20%;
   }
-}
-
-
+}*/
