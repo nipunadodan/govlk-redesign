@@ -1,6 +1,49 @@
+const debug = true;
+
 var validate = [];
 var before_function = [];
 var dyn_function = [];
+
+function ajaxJS(url, serialized,  func, silent='No', method='post'){
+    if(debug === true)
+        console.log('ajax-init~'+url);
+    if(silent==='No'){
+        var spinner = ' <i class="la la-circle-o-notch la-spin" id="spinner"></i>';
+        $('.loading').after(spinner);
+        $('button, input[type="submit"]').attr('disabled','true');
+    }
+
+    $.ajax({
+        data: serialized,
+        type: method,
+        url: url,
+        success: function (response) {
+            if(debug === true)
+                console.log(response);
+            if(typeof response !== 'object')
+                var json = JSON.parse(response);
+            else
+                var json = response;
+            //console.log(json);
+            dyn_function[func](json);
+            if(silent === 'No'){
+                $('button, input[type="submit"]').prop("disabled", false);
+                $('#spinner').remove();
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            //console.log('AJAX call failed.');
+            //console.log(textStatus + ': ' + errorThrown);
+        },
+        complete: function () {
+            //console.log('AJAX call completed');
+        }
+    });
+
+    return false;
+}
+
+
 
 dyn_function['page-load'] = function (filename) {
     $.ajax({
@@ -29,3 +72,18 @@ $(document).ready(function (e) {
     else
         dyn_function['page-load']('home');
 });
+
+before_function['covid'] = function () {
+    ajaxJS('https://hpb.health.gov.lk/api/get-current-statistical', {}, 'covid', 'No', 'get');
+};
+
+dyn_function['covid'] = function (json) {
+    console.log(json);
+    if(json.message == 'Success' && json.success == true){
+        $('#total').html(json.data.local_total_cases);
+        $('#new').html(json.data.local_new_cases);
+        $('#observation').html(json.data.local_total_number_of_individuals_in_hospitals);
+        $('#deaths').html(json.data.local_deaths);
+        $('#recovered').html(json.data.local_recovered);
+    }
+};
