@@ -8,7 +8,7 @@ function ajaxJS(url, serialized,  func, silent='No', method='post'){
     if(debug === true)
         console.log('ajax-init~'+url);
     if(silent==='No'){
-        var spinner = ' <i class="la la-circle-o-notch la-spin" id="spinner"></i>';
+        var spinner = ' <i class="la la-circle-o-notch la-spin spinner"></i>';
         $('.loading').after(spinner);
         $('button, input[type="submit"]').attr('disabled','true');
     }
@@ -28,15 +28,19 @@ function ajaxJS(url, serialized,  func, silent='No', method='post'){
             dyn_function[func](json);
             if(silent === 'No'){
                 $('button, input[type="submit"]').prop("disabled", false);
-                $('#spinner').remove();
+                $('.spinner, .ajax-error').remove();
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
             //console.log('AJAX call failed.');
             //console.log(textStatus + ': ' + errorThrown);
+            $('.spinner, .ajax-error').remove();
+            var error = ' <span class="ajax-error"><i class="la la-warning"></i> Error</span>';
+            $('.loading').after(spinner);
         },
         complete: function () {
             //console.log('AJAX call completed');
+            //$('.spinner, .ajax-error').remove();
         }
     });
 
