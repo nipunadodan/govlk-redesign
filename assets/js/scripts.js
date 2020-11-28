@@ -82,11 +82,10 @@ before_function['covid'] = function () {
 };
 
 dyn_function['covid'] = function (json) {
-    console.log(json);
     if(json.message == 'Success' && json.success == true){
         $('#total').html(json.data.local_total_cases);
         $('#new').html(json.data.local_new_cases);
-        $('#observation').html(json.data.local_total_number_of_individuals_in_hospitals);
+        $('#active').html(json.data.local_active_cases);
         $('#deaths').html(json.data.local_deaths);
         $('#recovered').html(json.data.local_recovered);
     }
