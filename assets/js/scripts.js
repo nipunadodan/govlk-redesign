@@ -1,5 +1,5 @@
-const debug = true;
-
+const debug = !config.production;
+console.log(debug);
 var validate = [];
 var before_function = [];
 var dyn_function = [];
